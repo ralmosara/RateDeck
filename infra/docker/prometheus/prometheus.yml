@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'ratedeck-api'
+    static_configs:
+      - targets: ['api:3000']
+  - job_name: 'ratedeck-rating-service'
+    static_configs:
+      - targets: ['rating-service:3000']
+  - job_name: 'ratedeck-auth-service'
+    static_configs:
+      - targets: ['auth-service:3001']

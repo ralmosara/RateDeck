@@ -1,0 +1,66 @@
+{
+  "name": "@ratedeck/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RateDeck NestJS modular monolith (API + worker entrypoints).",
+  "nx": {
+    "tags": [
+      "type:app",
+      "scope:api"
+    ]
+  },
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch",
+    "dev:worker": "nest start --watch --entryFile worker",
+    "start": "node dist/main.js",
+    "start:worker": "node dist/worker.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run --passWithNoTests",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/jwt": "^12.0.2",
+    "@nestjs/passport": "^12.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@nestjs/swagger": "^11.0.0",
+    "@ratedeck/contracts": "workspace:*",
+    "@ratedeck/rating-core": "workspace:*",
+    "@ratedeck/shared-kernel": "workspace:*",
+    "argon2": "^0.45.1",
+    "bullmq": "^5.34.0",
+    "csv-parse": "^7.0.3",
+    "drizzle-orm": "^0.44.0",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.4.0",
+    "multer": "^2.4.0",
+    "nestjs-pino": "^4.2.0",
+    "otplib": "^12.0.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "pg": "^8.13.0",
+    "pino": "^9.6.0",
+    "pino-http": "^10.3.0",
+    "qrcode": "^1.5.4",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.0.0",
+    "@types/express": "^5.0.0",
+    "@types/multer": "^2.3.0",
+    "@types/otplib": "^10.0.0",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/pg": "^8.11.0",
+    "@types/qrcode": "^1.5.6",
+    "drizzle-kit": "^0.31.0",
+    "pino-pretty": "^13.0.0",
+    "tsx": "^4.19.0"
+  }
+}

@@ -1,0 +1,119 @@
+/* ==========================================================================
+   RateDeck Design Tokens — Microsoft 365 Fluent Theme
+   ========================================================================== */
+
+:root {
+  /* ---- Brand (Microsoft Blue) ---- */
+  --rd-color-primary: #0f6cbd;
+  --rd-color-primary-strong: #115ea3;
+  --rd-color-primary-soft: #ebf3fc;
+  --rd-color-accent: #0f6cbd;
+  --rd-color-accent-soft: #ebf3fc;
+  --rd-color-accent-strong: #115ea3;
+
+  /* Subtle Gradients */
+  --rd-gradient-brand: linear-gradient(135deg, #0f6cbd 0%, #115ea3 100%);
+  --rd-gradient-accent: linear-gradient(135deg, #0f6cbd 0%, #0c3b5e 100%);
+  
+  /* ---- Semantic ---- */
+  --rd-color-success: #107c10;
+  --rd-color-warning: #d83b01;
+  --rd-color-danger: #a4262c;
+  --rd-color-info: #0078d4;
+
+  /* ---- Spacing ---- */
+  --rd-space-1: 4px;
+  --rd-space-2: 8px;
+  --rd-space-3: 12px;
+  --rd-space-4: 16px;
+  --rd-space-5: 20px;
+  --rd-space-6: 24px;
+  --rd-space-8: 32px;
+  --rd-space-10: 40px;
+  --rd-space-12: 48px;
+
+  /* ---- Radius (Fluent is mostly 4px or 8px) ---- */
+  --rd-radius-sm: 2px;
+  --rd-radius-md: 4px;
+  --rd-radius-lg: 8px;
+  --rd-radius-xl: 12px;
+  --rd-radius-pill: 9999px;
+
+  /* ---- Typography ---- */
+  --rd-font-sans: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+  --rd-font-display: 'Segoe UI', -apple-system, sans-serif;
+  --rd-font-mono: Consolas, 'Courier New', Courier, monospace;
+  --rd-text-xs: 12px;
+  --rd-text-sm: 14px;
+  --rd-text-md: 16px;
+  --rd-text-lg: 18px;
+  --rd-text-xl: 20px;
+  --rd-text-2xl: 24px;
+  --rd-text-3xl: 28px;
+  --rd-text-4xl: 32px;
+
+  /* ---- Motion ---- */
+  --rd-ease-out: cubic-bezier(0.1, 0.9, 0.2, 1);
+  --rd-ease-in-out: cubic-bezier(0.8, 0, 0.2, 1);
+  --rd-motion-fast: 100ms;
+  --rd-motion-base: 200ms;
+  --rd-motion-slow: 400ms;
+
+  /* ---- Layout ---- */
+  --rd-sidebar-width: 260px;
+  --rd-topbar-height: 48px; /* Classic M365 header is slim */
+}
+
+/* ---- Light Theme (Default Fluent) ---- */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --rd-color-bg: #faf9f8; /* M365 Neutral Background */
+  --rd-color-bg-elevated: #ffffff;
+  --rd-color-surface: rgba(255, 255, 255, 0.85); /* Acrylic */
+  --rd-color-surface-solid: #ffffff;
+  --rd-color-surface-hover: #f3f2f1;
+  
+  --rd-color-border: #edebe9;
+  --rd-color-border-strong: #c8c6c4;
+  --rd-color-border-light: #f3f2f1;
+
+  --rd-color-text: #323130;
+  --rd-color-text-muted: #605e5c;
+  --rd-color-text-subtle: #a19f9d;
+
+  /* Fluent Depth */
+  --rd-shadow-sm: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108);
+  --rd-shadow-md: 0 3.2px 7.2px 0 rgba(0,0,0,0.132), 0 0.6px 1.8px 0 rgba(0,0,0,0.108);
+  --rd-shadow-lg: 0 6.4px 14.4px 0 rgba(0,0,0,0.132), 0 1.2px 3.6px 0 rgba(0,0,0,0.108);
+  --rd-shadow-glow: 0 0 0 1px transparent; /* No crazy glows in M365 */
+  --rd-shadow-glow-accent: 0 0 0 1px transparent;
+  
+  --rd-glass-blur: saturate(180%) blur(20px); /* Acrylic blur */
+}
+
+/* ---- Dark Theme ---- */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --rd-color-bg: #292929; 
+  --rd-color-bg-elevated: #333333; 
+  --rd-color-surface: rgba(36, 36, 36, 0.85);
+  --rd-color-surface-solid: #242424;
+  --rd-color-surface-hover: #3d3d3d;
+  
+  --rd-color-border: #484848;
+  --rd-color-border-strong: #606060;
+  --rd-color-border-light: rgba(255,255,255,0.08);
+
+  --rd-color-text: #ffffff;
+  --rd-color-text-muted: #c8c6c4;
+  --rd-color-text-subtle: #a19f9d;
+
+  --rd-shadow-sm: 0 1.6px 3.6px 0 rgba(0,0,0,0.264), 0 0.3px 0.9px 0 rgba(0,0,0,0.216);
+  --rd-shadow-md: 0 3.2px 7.2px 0 rgba(0,0,0,0.264), 0 0.6px 1.8px 0 rgba(0,0,0,0.216);
+  --rd-shadow-lg: 0 6.4px 14.4px 0 rgba(0,0,0,0.264), 0 1.2px 3.6px 0 rgba(0,0,0,0.216);
+  --rd-shadow-glow: none;
+  --rd-shadow-glow-accent: none;
+  
+  --rd-glass-blur: saturate(180%) blur(20px);
+}

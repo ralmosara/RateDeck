@@ -1,0 +1,21 @@
+{
+  "name": "@ratedeck/rating-service",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node dist/main.js",
+    "dev": "ts-node-dev src/main.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "decimal.js": "^10.4.3",
+    "drizzle-orm": "^0.30.10",
+    "pg": "^8.11.5",
+    "ioredis": "^5.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "ts-node-dev": "^2.0.0",
+    "@types/node": "^20.12.11"
+  }
+}
