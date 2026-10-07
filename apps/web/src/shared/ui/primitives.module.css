@@ -1,0 +1,281 @@
+/* ---- Card (Glassmorphism & Rich Aesthetics) ---- */
+.card {
+  position: relative;
+  background: var(--rd-color-surface);
+  backdrop-filter: var(--rd-glass-blur);
+  -webkit-backdrop-filter: var(--rd-glass-blur);
+  border: 1px solid var(--rd-color-border);
+  border-radius: var(--rd-radius-lg);
+  box-shadow: var(--rd-shadow-md);
+  padding: var(--rd-space-6);
+  animation: rd-fade-up var(--rd-motion-slow) var(--rd-ease-out) both;
+  transition: transform var(--rd-motion-base) var(--rd-ease-out), box-shadow var(--rd-motion-base) var(--rd-ease-out);
+}
+
+.card:hover {
+  box-shadow: var(--rd-shadow-lg);
+  border-color: var(--rd-color-border-strong);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--rd-space-4);
+  margin-bottom: var(--rd-space-5);
+}
+
+.cardTitle {
+  font-size: var(--rd-text-xl);
+  font-family: var(--rd-font-display);
+  font-weight: 600;
+  color: var(--rd-color-text);
+  letter-spacing: -0.01em;
+}
+
+.cardSubtitle {
+  margin-top: 4px;
+  color: var(--rd-color-text-subtle);
+  font-size: var(--rd-text-sm);
+}
+
+/* ---- Button (Vibrant & Interactive) ---- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--rd-space-2);
+  height: 44px;
+  padding: 0 var(--rd-space-6);
+  border-radius: var(--rd-radius-pill);
+  border: 1px solid var(--rd-color-border-strong);
+  background: var(--rd-color-surface-solid);
+  font-weight: 600;
+  font-size: var(--rd-text-sm);
+  cursor: pointer;
+  transition:
+    transform var(--rd-motion-fast) var(--rd-ease-out),
+    background var(--rd-motion-fast) var(--rd-ease-out),
+    box-shadow var(--rd-motion-fast) var(--rd-ease-out),
+    border-color var(--rd-motion-fast) var(--rd-ease-out);
+}
+
+.button:hover {
+  background: var(--rd-color-surface-hover);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  border-color: transparent;
+  color: #ffffff;
+  background: var(--rd-gradient-brand);
+  box-shadow: var(--rd-shadow-sm);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, hsl(290 85% 66%) 0%, hsl(252 85% 66%) 100%);
+  opacity: 0;
+  transition: opacity var(--rd-motion-base) var(--rd-ease-out);
+  z-index: -1;
+}
+
+.primary:hover {
+  box-shadow: var(--rd-shadow-glow);
+  color: #fff;
+}
+
+.primary:hover::before {
+  opacity: 1;
+}
+
+.ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--rd-color-text);
+}
+
+.ghost:hover {
+  background: var(--rd-color-surface-hover);
+  color: var(--rd-color-primary);
+}
+
+/* ---- Badge (Modern Pill) ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 var(--rd-space-3);
+  border-radius: var(--rd-radius-pill);
+  border: 1px solid var(--rd-color-border);
+  font-size: var(--rd-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--rd-color-surface-solid);
+  color: var(--rd-color-text-muted);
+  white-space: nowrap;
+}
+
+.badge[data-tone='success'] {
+  background: hsla(150, 60%, 45%, 0.1);
+  color: var(--rd-color-success);
+  border-color: hsla(150, 60%, 45%, 0.2);
+}
+
+.badge[data-tone='warning'] {
+  background: hsla(38, 95%, 58%, 0.1);
+  color: var(--rd-color-warning);
+  border-color: hsla(38, 95%, 58%, 0.2);
+}
+
+.badge[data-tone='danger'] {
+  background: hsla(352, 80%, 60%, 0.1);
+  color: var(--rd-color-danger);
+  border-color: hsla(352, 80%, 60%, 0.2);
+}
+
+.badge[data-tone='brand'] {
+  background: var(--rd-color-primary-soft);
+  color: var(--rd-color-primary);
+  border-color: hsla(252, 85%, 66%, 0.2);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.dotLive {
+  animation: rd-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ---- KPI (Dynamic & Premium) ---- */
+.kpi {
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--rd-shadow-lg);
+}
+
+.kpiLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--rd-space-2);
+  color: var(--rd-color-text-subtle);
+  font-size: var(--rd-text-sm);
+  font-weight: 500;
+}
+
+.kpiIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rd-radius-sm);
+  background: var(--rd-color-surface-hover);
+  color: var(--rd-color-primary);
+  transition: transform var(--rd-motion-fast) var(--rd-ease-out), background var(--rd-motion-fast);
+}
+
+.kpi:hover .kpiIcon {
+  background: var(--rd-color-primary-soft);
+  transform: scale(1.1);
+}
+
+.kpiValue {
+  margin-top: var(--rd-space-4);
+  font-size: var(--rd-text-4xl);
+  font-family: var(--rd-font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--rd-color-text);
+}
+
+.kpiFoot {
+  display: flex;
+  align-items: center;
+  gap: var(--rd-space-3);
+  margin-top: var(--rd-space-3);
+  color: var(--rd-color-text-subtle);
+  font-size: var(--rd-text-sm);
+}
+
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--rd-radius-sm);
+  background: var(--rd-color-surface-hover);
+}
+
+.deltaUp {
+  color: var(--rd-color-accent);
+  background: var(--rd-color-accent-soft);
+}
+
+.deltaDown {
+  color: var(--rd-color-danger);
+  background: hsla(352, 80%, 60%, 0.1);
+}
+
+/* ---- Field (Modern Inputs) ---- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-size: var(--rd-text-sm);
+  font-weight: 500;
+  color: var(--rd-color-text-muted);
+}
+
+.input {
+  height: 48px;
+  padding: 0 var(--rd-space-4);
+  border-radius: var(--rd-radius-md);
+  border: 1px solid var(--rd-color-border-strong);
+  background: var(--rd-color-bg-elevated);
+  transition:
+    border-color var(--rd-motion-fast),
+    box-shadow var(--rd-motion-fast);
+  color: var(--rd-color-text);
+  font-size: var(--rd-text-md);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--rd-color-primary);
+  box-shadow: 0 0 0 2px var(--rd-color-primary-soft);
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--rd-color-danger);
+  box-shadow: 0 0 0 2px hsla(352, 80%, 60%, 0.2);
+}
+
+.hint {
+  font-size: var(--rd-text-xs);
+  color: var(--rd-color-text-subtle);
+  margin-top: 2px;
+}

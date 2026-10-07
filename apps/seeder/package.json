@@ -1,0 +1,23 @@
+{
+  "name": "@ratedeck/seeder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "nx": {
+    "tags": [
+      "type:app",
+      "scope:seeder"
+    ]
+  },
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "pg": "^8.13.0",
+    "pg-copy-streams": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.0",
+    "tsx": "^4.19.0"
+  }
+}

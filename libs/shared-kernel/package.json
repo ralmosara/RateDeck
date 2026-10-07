@@ -1,0 +1,27 @@
+{
+  "name": "@ratedeck/shared-kernel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Isomorphic domain primitives: Money, Result, branded IDs.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "nx": { "tags": ["type:lib", "scope:shared"] },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "decimal.js": "^10.4.3"
+  }
+}

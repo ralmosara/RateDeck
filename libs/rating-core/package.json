@@ -1,0 +1,30 @@
+{
+  "name": "@ratedeck/rating-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pure rating domain: billing increments, longest-prefix match trie, call rating. No I/O.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "nx": { "tags": ["type:lib", "scope:rating"] },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ratedeck/shared-kernel": "workspace:*"
+  },
+  "devDependencies": {
+    "fast-check": "^3.23.0"
+  }
+}
